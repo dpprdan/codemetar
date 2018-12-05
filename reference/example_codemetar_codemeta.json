@@ -483,7 +483,7 @@
   "isPartOf": "https://ropensci.org",
   "keywords": ["metadata", "codemeta", "ropensci", "citation", "credit", "linked-data", "json-ld", "r", "rstats", "r-package", "peer-reviewed"],
   "releaseNotes": "https://github.com/ropensci/codemetar/blob/master/NEWS.md",
-  "fileSize": "570.489KB",
+  "fileSize": "570.525KB",
   "contIntegration": [
     "https://travis-ci.org/ropensci/codemetar",
     "https://ci.appveyor.com/project/cboettig/codemetar/branch/master",
