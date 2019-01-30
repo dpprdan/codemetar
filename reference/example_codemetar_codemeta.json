@@ -18,10 +18,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.1",
+    "version": "3.5.2",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.1 (2017-01-27)",
+  "runtimePlatform": "R version 3.5.2 (2017-01-27)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -483,7 +483,7 @@
   "isPartOf": "https://ropensci.org",
   "keywords": ["metadata", "codemeta", "ropensci", "citation", "credit", "linked-data", "json-ld", "r", "rstats", "r-package", "peer-reviewed"],
   "releaseNotes": "https://github.com/ropensci/codemetar/blob/master/NEWS.md",
-  "fileSize": "570.525KB",
+  "fileSize": "570.979KB",
   "contIntegration": [
     "https://travis-ci.org/ropensci/codemetar",
     "https://ci.appveyor.com/project/cboettig/codemetar/branch/master",
