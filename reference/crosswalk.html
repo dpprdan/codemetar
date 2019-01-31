@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>crosswalk — crosswalk • codemetar</title>
+<title>Crosswalk — crosswalk • codemetar</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,13 +30,14 @@
 
 
 
-<meta property="og:title" content="crosswalk — crosswalk" />
+<meta property="og:title" content="Crosswalk — crosswalk" />
 
 <meta property="og:description" content="Crosswalk between different metadata fields used by different repositories,
-registries and archives. For more details see https://codemeta.github.io/crosswalk
-This function requires an internet connection to obtain the latest crosswalk table.
-This function essentially applies the crosswalk table shown by crosswalk_table
-to a given JSON metadata record." />
+registries and archives. For more details see
+https://codemeta.github.io/crosswalk This function requires an internet
+connection to obtain the latest crosswalk table. This function essentially
+applies the crosswalk table shown by crosswalk_table to a given
+JSON metadata record." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -127,7 +128,7 @@ to a given JSON metadata record." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>crosswalk</h1>
+    <h1>Crosswalk</h1>
     <small class="dont-index">Source: <a href='https://github.com/ropensci/codemetar/blob/master/R/crosswalk.R'><code>R/crosswalk.R</code></a></small>
     <div class="hidden name"><code>crosswalk.Rd</code></div>
     </div>
@@ -135,16 +136,15 @@ to a given JSON metadata record." />
     <div class="ref-description">
     
     <p>Crosswalk between different metadata fields used by different repositories,
-registries and archives. For more details see https://codemeta.github.io/crosswalk
-This function requires an internet connection to obtain the latest crosswalk table.
-This function essentially applies the crosswalk table shown by <code><a href='crosswalk_table.html'>crosswalk_table</a></code>
-to a given JSON metadata record.</p>
+registries and archives. For more details see
+https://codemeta.github.io/crosswalk This function requires an internet
+connection to obtain the latest crosswalk table. This function essentially
+applies the crosswalk table shown by <code><a href='crosswalk_table.html'>crosswalk_table</a></code> to a given
+JSON metadata record.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>crosswalk</span>(<span class='no'>x</span>, <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"codemeta"</span>,
-  <span class='kw'>codemeta_context</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"codemeta_context"</span>,
-  <span class='st'>"https://doi.org/10.5063/schema/codemeta-2.0"</span>))</pre>
+    <pre class="usage"><span class='fu'>crosswalk</span>(<span class='no'>x</span>, <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"codemeta"</span>, <span class='kw'>codemeta_context</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,13 +163,18 @@ to a given JSON metadata record.</p>
     </tr>
     <tr>
       <th>codemeta_context</th>
-      <td><p>the address or contents of codemeta context. Leave at default</p></td>
+      <td><p>the address or contents of codemeta context. If not
+specified, the default "https://doi.org/10.5063/schema/codemeta-2.0" is
+used. The default is taken from the option "codemeta_context" and can thus
+be overridden by setting this option with <code>options(codemeta_context =
+&lt;your_context_url&gt;)</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a `json` object containing a valid codemeta.json file created by crosswalking the input JSON</p>
+    <p>a `json` object containing a valid codemeta.json file created by
+  crosswalking the input JSON</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

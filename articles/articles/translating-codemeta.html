@@ -92,7 +92,7 @@
       <h1>Translating between schema using JSON-LD</h1>
                         <h4 class="author">Carl Boettiger</h4>
             
-            <h4 class="date">2019-01-30</h4>
+            <h4 class="date">2019-01-31</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ropensci/codemetar/blob/master/vignettes/articles/translating-codemeta.Rmd"><code>vignettes/articles/translating-codemeta.Rmd</code></a></small>
       <div class="hidden name"><code>translating-codemeta.Rmd</code></div>
@@ -266,16 +266,18 @@ $license
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw"><a href="../../reference/crosswalk.html">crosswalk</a></span>(package.json, <span class="st">"NodeJS"</span>)</a></code></pre></div>
 <pre><code>{
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "author": [
+    "Mark Pundsack"
+  ],
   "codeRepository": {},
-  "creator": "Mark Pundsack",
   "description": "A sample Node.js app using Express 4",
+  "identifier": "/node-js-sample",
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
   "license": "/MIT",
-  "name": "node-js-sample",
   "version": "0.2.0"
 } </code></pre>
 <p>Note that while nested structures per se pose no special problem, the compaction/expansion paradigm lacks a mechanism to capture differences in nesting between schema. For instance, in <code>codemeta</code> (i.e. in schema.org), a <code>codeRepository</code> is expected to be a URL, while NodeJS <code>package.json</code> permits it to be another object node with sub-properties <code>type</code> and <code>url</code>. There is no way in JSON-LD transforms or context definitions to indicate that the <code>url</code> sub-property in the NodeJS case, e.g. <code>codeRepository.url</code> maps to schema’s <code>codeRepository</code>. (This same limitation is also true of the 2-dimensional table structure of the crosswalk itself, though it is important to keep in mind that this 1:1 mapping requirement is not unique to the the <code>.csv</code> representation but also inherent in JSON-LD contexts.)</p>
