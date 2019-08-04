@@ -141,6 +141,11 @@
 <li>address internet timeout issues</li>
 <li>tidy source code</li>
 <li>update test suite to reflect newly available metadata.</li>
+<li>
+<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code> and <code><a href="../reference/create_codemeta.html">create_codemeta()</a></code>: <code>use_filesize = FALSE</code> is now the default and the estimation of the file size does not leave any more unwanted files behind <a href="https://github.com/ropensci/codemetar/pull/239">PR <a href='https://github.com/ropensci/codemetar/issues/239'>#239</a></a>. Furthermore, the way the file size is calculated changed: Before we used the size of the package built with <code><a href="https://www.rdocumentation.org/packages/pkgbuild/topics/build">pkgbuild::build()</a></code>, which took rather long. Now the size is calculated based on the source files minus files excluded via<br><code>.Rbuildignore</code> (if such a file exists).</li>
+<li>
+<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code>: the default of argument <code>use_git_hook</code> is now <code>FALSE</code> to avoid an unwanted alteration of the user’s git environment <a href="https://github.com/ropensci/codemetar/issues/240">issue <a href='https://github.com/ropensci/codemetar/issues/240'>#240</a></a>.</li>
+<li>Package dependency to ‘pkgbuild’ has been dropped.</li>
 </ul>
 </div>
     <div id="codemetar-0-1-7-2018-12" class="section level1">

@@ -152,9 +152,9 @@ create_codemeta().</p>
     </div>
 
     <pre class="usage"><span class='fu'>write_codemeta</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"codemeta.json"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"."</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>use_filesize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>use_filesize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>force_update</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"codemeta_force_update"</span>, <span class='fl'>TRUE</span>),
-  <span class='kw'>use_git_hook</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>use_git_hook</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,8 +179,8 @@ root. Default guess is current dir.</p></td>
     </tr>
     <tr>
       <th>use_filesize</th>
-      <td><p>whether to try adding a filesize by using
-<code><a href='https://www.rdocumentation.org/packages/pkgbuild/topics/build'>pkgbuild::build()</a></code>.</p></td>
+      <td><p>whether to try to estimating and adding a filesize by using
+<code>base::files.ize()</code>. Files in <code>.Rbuildignore</code> are ignored.</p></td>
     </tr>
     <tr>
       <th>force_update</th>
@@ -190,7 +190,8 @@ existing codemeta.json file</p></td>
     <tr>
       <th>use_git_hook</th>
       <td><p>Whether to create a pre-commit hook requiring
-codemeta.json to be updated when DESCRIPTION is changed.  Defaults to TRUE.</p></td>
+codemeta.json to be updated when DESCRIPTION is changed. Default is <code>FALSE</code> to avoid
+an unwanted alteration of the user's git environment.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
