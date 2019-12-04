@@ -26,8 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -44,10 +44,12 @@
 <link href="../ropensci.css" rel="stylesheet">
 
 <meta property="og:title" content="Crosswalk Table — crosswalk_table" />
-
 <meta property="og:description" content="Return a subset of the crosswalk table containing codemeta properties and
 matching column" />
 <meta name="twitter:card" content="summary" />
+
+
+
 
 
 
@@ -60,6 +62,7 @@ matching column" />
 
   gtag('config', 'UA-462421-8');
 </script>
+
   </head>
 
   <body>
@@ -84,7 +87,7 @@ matching column" />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -117,7 +120,7 @@ matching column" />
 </li>
         <li>
   <a href="https://github.com/ropensci/codemetar">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -128,6 +131,7 @@ matching column" />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -139,14 +143,12 @@ matching column" />
     </div>
 
     <div class="ref-description">
-    
     <p>Return a subset of the crosswalk table containing codemeta properties and
 matching column</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>crosswalk_table</span>(<span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>full_crosswalk</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>trim</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -168,15 +170,15 @@ table.</p></td>
       <td><p>drop rows giving properties not found in the 'from' column?</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a tibble containing the trimmed crosswalk table, listing property (in
   CodeMeta), and the corresponding terms in both from and to columns.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>crosswalk_table</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"GitHub"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Zenodo"</span>, <span class='st'>"Figshare"</span>))</div><div class='output co'>#&gt; # A tibble: 11 x 4
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>crosswalk_table</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"GitHub"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Zenodo"</span>, <span class='st'>"Figshare"</span>))</div><div class='output co'>#&gt; # A tibble: 11 x 4
 #&gt;    Property            GitHub        Zenodo            Figshare   
 #&gt;    &lt;chr&gt;               &lt;chr&gt;         &lt;chr&gt;             &lt;chr&gt;      
 #&gt;  1 codeRepository      html_url      relatedLink       relatedLink
@@ -189,20 +191,20 @@ table.</p></td>
 #&gt;  8 description         description   description/notes Description
 #&gt;  9 identifier          id            id                &lt;NA&gt;       
 #&gt; 10 name                full_name     title             Title      
-#&gt; 11 issueTracker        issues_url    &lt;NA&gt;              &lt;NA&gt;       </div></pre>
+#&gt; 11 issueTracker        issues_url    &lt;NA&gt;              &lt;NA&gt;       </div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div style="margin-top:-9px">
@@ -215,11 +217,14 @@ table.</p></td>
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a> & <a href="https://docs.ropensci.org/rotemplate/">rotemplate</a>.
   </p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

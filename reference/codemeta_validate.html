@@ -26,8 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -44,11 +44,13 @@
 <link href="../ropensci.css" rel="stylesheet">
 
 <meta property="og:title" content="codemeta validate — codemeta_validate" />
-
 <meta property="og:description" content="Checks that a round-trip of expanding and compacting json-ld matches the
 original document.  Incorrect schema terms or types (or spelling errors of
 properties) will cause this round-trip to fail by not fully compacting." />
 <meta name="twitter:card" content="summary" />
+
+
+
 
 
 
@@ -61,6 +63,7 @@ properties) will cause this round-trip to fail by not fully compacting." />
 
   gtag('config', 'UA-462421-8');
 </script>
+
   </head>
 
   <body>
@@ -85,7 +88,7 @@ properties) will cause this round-trip to fail by not fully compacting." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,7 +121,7 @@ properties) will cause this round-trip to fail by not fully compacting." />
 </li>
         <li>
   <a href="https://github.com/ropensci/codemetar">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -129,6 +132,7 @@ properties) will cause this round-trip to fail by not fully compacting." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -140,15 +144,13 @@ properties) will cause this round-trip to fail by not fully compacting." />
     </div>
 
     <div class="ref-description">
-    
     <p>Checks that a round-trip of expanding and compacting json-ld matches the
 original document.  Incorrect schema terms or types (or spelling errors of
 properties) will cause this round-trip to fail by not fully compacting.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>codemeta_validate</span>(<span class='kw'>codemeta</span> <span class='kw'>=</span> <span class='st'>"codemeta.json"</span>, <span class='kw'>context</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -162,15 +164,14 @@ properties) will cause this round-trip to fail by not fully compacting.</p>
 as default or use appropriate DOI for the version; see details.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>by default, validation will use the original context from the import
   file.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>ex</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"examples/codemeta.json"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"codemetar"</span>)
+    <pre class="examples"><div class='input'><span class='no'>ex</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"examples/codemeta.json"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"codemetar"</span>)
 <span class='fu'>codemeta_validate</span>(<span class='no'>ex</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 </div></pre>
   </div>
@@ -178,14 +179,13 @@ as default or use appropriate DOI for the version; see details.</p></td>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#details">Details</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div style="margin-top:-9px">
@@ -198,11 +198,14 @@ as default or use appropriate DOI for the version; see details.</p></td>
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a> & <a href="https://docs.ropensci.org/rotemplate/">rotemplate</a>.
   </p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

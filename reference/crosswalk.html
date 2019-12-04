@@ -26,8 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -44,7 +44,6 @@
 <link href="../ropensci.css" rel="stylesheet">
 
 <meta property="og:title" content="Crosswalk — crosswalk" />
-
 <meta property="og:description" content="Crosswalk between different metadata fields used by different repositories,
 registries and archives. For more details see
 https://codemeta.github.io/crosswalk This function requires an internet
@@ -52,6 +51,9 @@ connection to obtain the latest crosswalk table. This function essentially
 applies the crosswalk table shown by crosswalk_table to a given
 JSON metadata record." />
 <meta name="twitter:card" content="summary" />
+
+
+
 
 
 
@@ -64,6 +66,7 @@ JSON metadata record." />
 
   gtag('config', 'UA-462421-8');
 </script>
+
   </head>
 
   <body>
@@ -88,7 +91,7 @@ JSON metadata record." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -121,7 +124,7 @@ JSON metadata record." />
 </li>
         <li>
   <a href="https://github.com/ropensci/codemetar">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -132,6 +135,7 @@ JSON metadata record." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -143,18 +147,16 @@ JSON metadata record." />
     </div>
 
     <div class="ref-description">
-    
     <p>Crosswalk between different metadata fields used by different repositories,
 registries and archives. For more details see
 https://codemeta.github.io/crosswalk This function requires an internet
 connection to obtain the latest crosswalk table. This function essentially
 applies the crosswalk table shown by <code><a href='crosswalk_table.html'>crosswalk_table</a></code> to a given
 JSON metadata record.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>crosswalk</span>(<span class='no'>x</span>, <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"codemeta"</span>, <span class='kw'>codemeta_context</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -179,33 +181,30 @@ be overridden by setting this option with <code>options(codemeta_context =
 &lt;your_context_url&gt;)</code>.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a `json` object containing a valid codemeta.json file created by
   crosswalking the input JSON</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='co'>## Crosswalk data returned by the GitHub API into CodeMeta format</span>
-<span class='no'>r</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>gh</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/gh/topics/gh'>gh</a></span>(<span class='st'>"/repos/:owner/:repo"</span>, <span class='kw'>owner</span> <span class='kw'>=</span> <span class='st'>"ropensci"</span>, <span class='kw'>repo</span> <span class='kw'>=</span> <span class='st'>"EML"</span>)
+<span class='no'>r</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>gh</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gh/man/gh.html'>gh</a></span>(<span class='st'>"/repos/:owner/:repo"</span>, <span class='kw'>owner</span> <span class='kw'>=</span> <span class='st'>"ropensci"</span>, <span class='kw'>repo</span> <span class='kw'>=</span> <span class='st'>"EML"</span>)
 <span class='fu'>crosswalk</span>(<span class='no'>r</span>, <span class='st'>"GitHub"</span>)
-<span class='co'># }</span><div class='input'>
-</div></pre>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div style="margin-top:-9px">
@@ -218,11 +217,14 @@ be overridden by setting this option with <code>options(codemeta_context =
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a> & <a href="https://docs.ropensci.org/rotemplate/">rotemplate</a>.
   </p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

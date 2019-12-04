@@ -26,8 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -47,6 +47,9 @@
 
 
 
+
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-462421-8"></script>
 <script>
@@ -56,6 +59,7 @@
 
   gtag('config', 'UA-462421-8');
 </script>
+
   </head>
 
   <body>
@@ -80,7 +84,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -113,7 +117,7 @@
 </li>
         <li>
   <a href="https://github.com/ropensci/codemetar">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -124,6 +128,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -133,6 +138,11 @@
       <small>Source: <a href='https://github.com/ropensci/codemetar/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="codemetar-development-version" class="section level1">
+<h1 class="page-header">
+<a href="#codemetar-development-version" class="anchor"></a>codemetar (development version)<small> Unreleased </small>
+</h1>
+</div>
     <div id="codemetar-0-1-8-2019-05" class="section level1">
 <h1 class="page-header">
 <a href="#codemetar-0-1-8-2019-05" class="anchor"></a>codemetar 0.1.8 2019-05<small> 2019-04-22 </small>
@@ -142,12 +152,12 @@
 <li>tidy source code</li>
 <li>update test suite to reflect newly available metadata.</li>
 <li>
-<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code> and <code><a href="../reference/create_codemeta.html">create_codemeta()</a></code>: <code>use_filesize = FALSE</code> is now the default and the estimation of the file size does not leave any more unwanted files behind <a href="https://github.com/ropensci/codemetar/pull/239">PR <a href='https://github.com/ropensci/codemetar/issues/239'>#239</a></a>. Furthermore, the way the file size is calculated changed: Before we used the size of the package built with <code><a href="https://www.rdocumentation.org/packages/pkgbuild/topics/build">pkgbuild::build()</a></code>, which took rather long. Now the size is calculated based on the source files minus files excluded via<br><code>.Rbuildignore</code> (if such a file exists).</li>
+<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code> and <code><a href="../reference/create_codemeta.html">create_codemeta()</a></code>: <code>use_filesize = FALSE</code> is now the default and the estimation of the file size does not leave any more unwanted files behind <a href="https://github.com/ropensci/codemetar/pull/239">PR <a href='https://github.com/ropensci/codemetar/issues/239'>#239</a></a>. Furthermore, the way the file size is calculated changed: Before we used the size of the package built with <code><a href="https://rdrr.io/pkg/pkgbuild/man/build.html">pkgbuild::build()</a></code>, which took rather long. Now the size is calculated based on the source files minus files excluded via<br><code>.Rbuildignore</code> (if such a file exists).</li>
 <li>
 <code><a href="../reference/write_codemeta.html">write_codemeta()</a></code>: the default of argument <code>use_git_hook</code> is now <code>FALSE</code> to avoid an unwanted alteration of the user’s git environment <a href="https://github.com/ropensci/codemetar/issues/240">issue <a href='https://github.com/ropensci/codemetar/issues/240'>#240</a></a>.</li>
 <li>Package dependency to ‘pkgbuild’ has been dropped.</li>
 <li>
-<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code> does not crash anymore if the <code>CITATION</code> file contains a line <code><a href="https://www.rdocumentation.org/packages/utils/topics/citation">citation(auto = meta)</a></code> <a href="https://github.com/ropensci/codemetar/issues/238">Issue <a href='https://github.com/ropensci/codemetar/issues/238'>#238</a></a>.</li>
+<code><a href="../reference/write_codemeta.html">write_codemeta()</a></code> does not crash anymore if the <code>CITATION</code> file contains a line <code><a href="https://rdrr.io/r/utils/citation.html">citation(auto = meta)</a></code> <a href="https://github.com/ropensci/codemetar/issues/238">Issue <a href='https://github.com/ropensci/codemetar/issues/238'>#238</a></a>.</li>
 </ul>
 </div>
     <div id="codemetar-0-1-7-2018-12" class="section level1">
@@ -265,6 +275,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#codemetar-development-version">development version</a></li>
         <li><a href="#codemetar-0-1-8-2019-05">0.1.8</a></li>
         <li><a href="#codemetar-0-1-7-2018-12">0.1.7</a></li>
         <li><a href="#codemetar-0-1-6-2018-04">0.1.6</a></li>
@@ -280,6 +291,7 @@
 
 </div>
 
+
       <footer>
       <div style="margin-top:-9px">
   <p>codemetar is a part of <img src='https://github.com/ropensci/logos/raw/master/icon_lettering_color.png' height=40 alt = 'rOpenSci'>. Learn more at <a href="https://ropensci.org">ropensci.org</a>.</p>
@@ -291,11 +303,14 @@
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a> & <a href="https://docs.ropensci.org/rotemplate/">rotemplate</a>.
   </p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

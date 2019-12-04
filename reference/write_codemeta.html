@@ -26,8 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -44,13 +44,15 @@
 <link href="../ropensci.css" rel="stylesheet">
 
 <meta property="og:title" content="write_codemeta — write_codemeta" />
-
 <meta property="og:description" content="write out a codemeta.json file for a given package.  This function is
 basically a wrapper around create_codemeta() to both create the codemeta
 object and write it out to a JSON-LD-formatted file in one command. It can
 also be used simply to write out to JSON-LD any existing object created with
 create_codemeta()." />
 <meta name="twitter:card" content="summary" />
+
+
+
 
 
 
@@ -63,6 +65,7 @@ create_codemeta()." />
 
   gtag('config', 'UA-462421-8');
 </script>
+
   </head>
 
   <body>
@@ -87,7 +90,7 @@ create_codemeta()." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +123,7 @@ create_codemeta()." />
 </li>
         <li>
   <a href="https://github.com/ropensci/codemetar">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -131,6 +134,7 @@ create_codemeta()." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -142,20 +146,18 @@ create_codemeta()." />
     </div>
 
     <div class="ref-description">
-    
     <p>write out a codemeta.json file for a given package.  This function is
 basically a wrapper around create_codemeta() to both create the codemeta
 object and write it out to a JSON-LD-formatted file in one command. It can
 also be used simply to write out to JSON-LD any existing object created with
 create_codemeta().</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>write_codemeta</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"codemeta.json"</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"."</span>,
   <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>use_filesize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force_update</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"codemeta_force_update"</span>, <span class='fl'>TRUE</span>),
+  <span class='kw'>force_update</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"codemeta_force_update"</span>, <span class='fl'>TRUE</span>),
   <span class='kw'>use_git_hook</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -203,11 +205,10 @@ DESCRIPTION has no URL. See <code><a href='give_opinions.html'>give_opinions</a>
       <td><p>additional arguments to <code>write_json</code></p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>writes out the codemeta.json file</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>If pkg is a codemeta object, the function will attempt to update any
@@ -219,25 +220,24 @@ adds "codemeta.json" to .Rbuildignore and, if the project uses git, adds a
 pre-commit hook ensuring that if DESCRIPTION changes, the codemeta.json will
 be updated as well unless the DESCRIPTION change is committed with 'git
 commit --no-verify'.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>write_codemeta</span>(<span class='st'>"codemetar"</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"example_codemetar_codemeta.json"</span>)</div><div class='output co'>#&gt; <span class='error'>Error: File `/home/travis/build/ropensci/codemetar/inst/DESCRIPTION' does not exist</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>write_codemeta</span>(<span class='st'>"codemetar"</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"example_codemetar_codemeta.json"</span>)
+<span class='co'># }</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div style="margin-top:-9px">
@@ -250,11 +250,14 @@ commit --no-verify'.</p>
     Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a> & <a href="https://docs.ropensci.org/rotemplate/">rotemplate</a>.
   </p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
